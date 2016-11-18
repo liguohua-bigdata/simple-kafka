@@ -235,4 +235,28 @@ ${ZOOKEEPER_HOME}/bin/zkCli.sh
  ls /
 ```
 ![](images/Snip20161118_115.png) 
-kafka生成7节点：[consumers, config, controller, isr_change_notification, admin, brokers, controller_epoch]
+kafka生成7节点：[consumers, config, controller, isr_change_notification, admin, brokers, controller_epoch]  
+
+列出kafka节点
+```
+ls /brokers/ids
+```
+![](images/Snip20161118_116.png) 
+
+查看kafka节点
+```
+get /brokers/ids/12
+```
+![](images/Snip20161118_117.png) 
+
+列出kafka主题
+```
+ls  /brokers/topics
+```
+![](images/Snip20161118_118.png) 
+
+查看kafka主题
+```
+get  /brokers/topics/food
+```
+![](images/Snip20161118_119.png) 
