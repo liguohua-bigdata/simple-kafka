@@ -16,7 +16,7 @@ wget http://mirrors.cnnic.cn/apache/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz
 ```
 tar -xvf kafka_2.11-0.10.1.0.tar
 ```
-1.5分发kafka   
+1.5分发命令 
 ```
 scp -r /bigdata/software/kafka_2.11-0.10.1.0  qingcheng12:/bigdata/software/
 scp -r /bigdata/software/kafka_2.11-0.10.1.0  qingcheng13:/bigdata/software/
