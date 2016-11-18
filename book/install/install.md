@@ -1,5 +1,5 @@
 一、kafka的分布式部署
-1.下载并分发kafka
+1.下载并分发kafka  
 1.1官方网站
 ```
 http://kafka.apache.org
@@ -47,8 +47,8 @@ scp -r /bigdata/software/kafka_2.11-0.10.1.0  qingcheng13:/bigdata/software/
     出现如下字样说明配置成功
    -bash: /bigdata/software/kafka_2.11-0.10.1.0: Is a directory
 ```
-3.部署配置文件
-3.1配置server.properties文件
+3.部署配置文件  
+3.1配置server.properties文件  
 配置命令：
 ```
  vim ${KAFKA_HOME}/config/server.properties
@@ -61,7 +61,7 @@ log.dirs=/usr/local/kafka/data
 zookeeper.connect=qingcheng11:2181,qingcheng12:2181,qingcheng13:2181
 ```
 
-3.2分发并修正server.properties文件
+3.2分发并修正server.properties文件  
 分发命令
 ```
 scp -r ${KAFKA_HOME}/config/server.properties qingcheng12:${KAFKA_HOME}/config/server.properties
@@ -78,18 +78,18 @@ broker.id=对应机器的id
 ```
 
 
-4.启动服务
+4.启动服务  
 4.1启动kafak服务  
 在各个kafka节点上执行命令：
 ```
 ${KAFKA_HOME}/bin/kafka-server-start.sh ${KAFKA_HOME}/config/server.properties  > /dev/null 2>&1 &
 ```
-4.2验证kafka服务
+4.2验证kafka服务  
 在各个kafka节点上执行命令：
 ```
 jps
 ```
-能看到kafka进程。
+能看到kafka进程。  
 
 
 
