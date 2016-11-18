@@ -1,22 +1,22 @@
 ##一、kafka的分布式部署
 ###1.下载并分发kafka  
-####1.1官方网站
+####官方网站
 ```
 http://kafka.apache.org
 ```
-####1.2下载页面
+####下载页面
 ```
 http://kafka.apache.org/downloads
 ```
-####1.3下载命令：
+####下载命令：
 ```
 wget http://mirrors.cnnic.cn/apache/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz
 ```
-####1.4解压命令：
+####解压命令：
 ```
 tar -xvf kafka_2.11-0.10.1.0.tar
 ```
-####1.5分发命令 
+####分发命令 
 ```
 scp -r /bigdata/software/kafka_2.11-0.10.1.0  qingcheng12:/bigdata/software/
 scp -r /bigdata/software/kafka_2.11-0.10.1.0  qingcheng13:/bigdata/software/
