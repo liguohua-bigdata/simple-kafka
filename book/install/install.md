@@ -92,4 +92,48 @@ jps
 能看到kafka进程。  
 
 
+5.使用服务
+创建主题：
+```
+${KAFKA_HOME}/bin/kafka-topics.sh \
+--create \
+--topic food \
+--partitions 3 \
+--replication-factor 2 \
+--zookeeper qingcheng11:2181,qingcheng12:2181,qingcheng13:2181
+```
+![](images/Snip20161118_111.png) 
+列出主题：
+```
+${KAFKA_HOME}/bin/kafka-topics.sh \
+--list \
+--zookeeper qingcheng11:2181,qingcheng12:2181,qingcheng13:2181
+```
+![](images/Snip20161118_112.png) 
+
+描述主题：
+```
+${KAFKA_HOME}/bin/kafka-topics.sh \
+--describe \
+--topic food \
+--zookeeper qingcheng11:2181,qingcheng12:2181,qingcheng13:2181
+```
+![](images/Snip20161118_113.png) 
+
+
+收发消息:
+```
+1.发送消息
+${KAFKA_HOME}/bin/kafka-console-producer.sh \
+--topic food \
+--broker-list qingcheng11:9092,qingcheng12:9092,qingcheng13:9092 
+
+2.接受消息
+${KAFKA_HOME}/bin/kafka-console-consumer.sh \
+--topic food \
+--from-beginning \
+--zookeeper qingcheng11:2181,qingcheng12:2181,qingcheng13:2181 
+```
+![](images/Snip20161118_114.png) 
+可见，kafka已经实现了消息的收发。至此，kafka的分布式部署算是成功了！
 
