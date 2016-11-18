@@ -142,11 +142,15 @@ broker.id=对应机器的id
 
 ###4.启动服务  
 ####4.1启动kafka服务  
-在各个kafka节点上执行命令：
+
 ```
 ${KAFKA_HOME}/bin/kafka-server-start.sh ${KAFKA_HOME}/config/server.properties  > /dev/null 2>&1 &
 ```
-注意：在启动kafka前要先启动zookeeper集群。  
+
+>注意：
+>1.在启动kafka前要先启动zookeeper集群。  
+>2.此命令需在各个kafka节点上执行  
+
 ####4.2验证kafka服务  
 在各个kafka节点上执行命令：
 ```
