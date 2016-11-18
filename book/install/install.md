@@ -55,10 +55,17 @@ scp -r /bigdata/software/kafka_2.11-0.10.1.0  qingcheng13:/bigdata/software/
 ```
 配置内容：
 ```
-broker.id=11
-num.partitions=3
-log.dirs=${KAFKA_HOME}/data
-zookeeper.connect=qingcheng11:2181,qingcheng12:2181,qingcheng13:2181
+必须配置：
+    broker.id=11
+    num.partitions=3
+    log.dirs=${KAFKA_HOME}/data
+    zookeeper.connect=qingcheng11:2181,qingcheng12:2181,qingcheng13:2181
+
+可选配置：
+    #在log.retention.hours=168 下面新增下面三项
+    message.max.byte=5242880
+    default.replication.factor=2
+    replica.fetch.max.bytes=5242880
 ```
 配置项说明：
 ```
