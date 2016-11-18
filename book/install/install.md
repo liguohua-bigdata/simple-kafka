@@ -209,7 +209,7 @@ ${KAFKA_HOME}/bin/kafka-console-consumer.sh \
 ${KAFKA_HOME}/bin/kafka-server-start.sh ${KAFKA_HOME}/config/server.properties  > /dev/null 2>&1 
 
 2.停止服务
-停止：${KAFKA_HOME}/bin/kafka-server-stop.sh 
+${KAFKA_HOME}/bin/kafka-server-stop.sh 
 ```
 
 ###7.日志说明  
