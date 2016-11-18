@@ -208,3 +208,31 @@ ${KAFKA_HOME}/bin/kafka-server-start.sh ${KAFKA_HOME}/config/server.properties  
 2.停止服务
 停止：${KAFKA_HOME}/bin/kafka-server-stop.sh 
 ```
+
+###7.其他说明    
+7.1日志说明  
+默认kafka的日志是保存在${KAFKA_HOME}/logs目录下的，这里说几个需要注意的日志  
+```
+#kafka的运行日志
+server.log
+
+#kafka他是用zookeeper来保存状态，所以他可能会进行切换，切换的日志就保存在这里
+state-change.log 
+
+#kafka选择一个节点作为“controller”,当发现有节点down掉的时候它负责在游泳分区的所有节点中选择新的leader,
+#这使得Kafka可以批量的高效的管理所有分区节点的主从关系。如果controller down掉了,活着的节点中的一个备份
+#会切换为新的controller.
+controller.log 
+```
+
+7.2查看kafka在zookeeper上是注册消息  
+进入zookeeper的客户端
+```
+${ZOOKEEPER_HOME}/bin/zkCli.sh
+```
+在zookeeper客户端，查看根目录
+```
+ ls /
+```
+![](images/Snip20161118_115.png) 
+kafka生成7节点：[consumers, config, controller, isr_change_notification, admin, brokers, controller_epoch]
