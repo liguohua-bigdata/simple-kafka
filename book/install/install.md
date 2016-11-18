@@ -1,22 +1,22 @@
 ##一、kafka的分布式部署
 ###1.下载并分发kafka  
-1.1官方网站
+####1.1官方网站
 ```
 http://kafka.apache.org
 ```
-1.2下载页面
+####1.2下载页面
 ```
 http://kafka.apache.org/downloads
 ```
-1.3下载命令：
+####1.3下载命令：
 ```
 wget http://mirrors.cnnic.cn/apache/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz
 ```
-1.4解压命令：
+####1.4解压命令：
 ```
 tar -xvf kafka_2.11-0.10.1.0.tar
 ```
-1.5分发命令 
+####1.5分发命令 
 ```
 scp -r /bigdata/software/kafka_2.11-0.10.1.0  qingcheng12:/bigdata/software/
 scp -r /bigdata/software/kafka_2.11-0.10.1.0  qingcheng13:/bigdata/software/
@@ -46,7 +46,7 @@ scp -r /bigdata/software/kafka_2.11-0.10.1.0  qingcheng13:/bigdata/software/
    -bash: /bigdata/software/kafka_2.11-0.10.1.0: Is a directory
 ```
 ###3.部署配置文件  
-3.1配置server.properties文件  
+####3.1配置server.properties文件  
 配置命令：
 ```
  vim ${KAFKA_HOME}/config/server.properties
@@ -123,7 +123,7 @@ log.cleaner.enable=false
 zookeeper.connect=localhost:1218 
 ```
 
-3.2分发并修正server.properties文件  
+####3.2分发并修正server.properties文件  
 分发命令
 ```
 scp -r ${KAFKA_HOME}/config/server.properties qingcheng12:${KAFKA_HOME}/config/server.properties
@@ -141,13 +141,13 @@ broker.id=对应机器的id
 
 
 ###4.启动服务  
-4.1启动kafka服务  
+####4.1启动kafka服务  
 在各个kafka节点上执行命令：
 ```
 ${KAFKA_HOME}/bin/kafka-server-start.sh ${KAFKA_HOME}/config/server.properties  > /dev/null 2>&1 &
 ```
 注意：在启动kafka前要先启动zookeeper集群。  
-4.2验证kafka服务  
+####4.2验证kafka服务  
 在各个kafka节点上执行命令：
 ```
 jps
@@ -155,7 +155,7 @@ jps
 能看到kafka进程。    
 
 ###5.使用服务    
-创建主题：
+####创建主题：
 ```
 ${KAFKA_HOME}/bin/kafka-topics.sh \
 --create \
@@ -165,7 +165,7 @@ ${KAFKA_HOME}/bin/kafka-topics.sh \
 --zookeeper qingcheng11:2181,qingcheng12:2181,qingcheng13:2181
 ```
 ![](images/Snip20161118_111.png) 
-列出主题：
+####列出主题：
 ```
 ${KAFKA_HOME}/bin/kafka-topics.sh \
 --list \
@@ -173,7 +173,7 @@ ${KAFKA_HOME}/bin/kafka-topics.sh \
 ```
 ![](images/Snip20161118_112.png) 
 
-描述主题：
+####描述主题：
 ```
 ${KAFKA_HOME}/bin/kafka-topics.sh \
 --describe \
@@ -182,7 +182,7 @@ ${KAFKA_HOME}/bin/kafka-topics.sh \
 ```
 ![](images/Snip20161118_113.png) 
 
-收发消息:
+####收发消息:
 ```
 1.发送消息
 ${KAFKA_HOME}/bin/kafka-console-producer.sh \
@@ -223,36 +223,36 @@ controller.log
 ```
 
 ###8.zookeeper注册信息说明
-进入zookeeper的客户端
+####进入zookeeper的客户端
 ```
 ${ZOOKEEPER_HOME}/bin/zkCli.sh
 ```
-查看注册的znode：
+####查看注册的znode：
 ```
  ls /
 ```
 ![](images/Snip20161118_115.png) 
 kafka生成7节点：[consumers, config, controller, isr_change_notification, admin, brokers, controller_epoch]  
 
-列出kafka节点
+####列出kafka节点
 ```
 ls /brokers/ids
 ```
 ![](images/Snip20161118_116.png) 
 
-查看kafka节点
+####查看kafka节点
 ```
 get /brokers/ids/12
 ```
 ![](images/Snip20161118_117.png) 
 
-列出kafka主题
+####列出kafka主题
 ```
 ls  /brokers/topics
 ```
 ![](images/Snip20161118_118.png) 
 
-查看kafka主题
+####查看kafka主题
 ```
 get  /brokers/topics/food
 ```
