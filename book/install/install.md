@@ -57,7 +57,7 @@ scp -r /bigdata/software/kafka_2.11-0.10.1.0  qingcheng13:/bigdata/software/
 ```
 broker.id=11
 num.partitions=3
-log.dirs=/usr/local/kafka/data
+log.dirs=${KAFKA_HOME}/data
 zookeeper.connect=qingcheng11:2181,qingcheng12:2181,qingcheng13:2181
 ```
 
