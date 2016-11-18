@@ -4,12 +4,10 @@
 ```
 http://kafka.apache.org
 ```
-![](images/Snip20161118_109.png) 
 1.2下载页面
 ```
 http://kafka.apache.org/downloads
 ```
-![](images/Snip20161118_110.png) 
 1.3下载命令：
 ```
 wget http://mirrors.cnnic.cn/apache/kafka/0.10.1.0/kafka_2.11-0.10.1.0.tgz
