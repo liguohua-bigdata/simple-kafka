@@ -200,3 +200,11 @@ ${KAFKA_HOME}/bin/kafka-console-consumer.sh \
 ![](images/Snip20161118_114.png) 
 可见，kafka已经实现了消息的收发。至此，kafka的分布式部署算是成功了！
 
+###6.kafka常用命令
+```
+1.启动服务
+${KAFKA_HOME}/bin/kafka-server-start.sh ${KAFKA_HOME}/config/server.properties  > /dev/null 2>&1 
+
+2.停止服务
+停止：${KAFKA_HOME}/bin/kafka-server-stop.sh 
+```
