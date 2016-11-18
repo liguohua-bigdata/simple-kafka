@@ -147,7 +147,7 @@ broker.id=对应机器的id
 ${KAFKA_HOME}/bin/kafka-server-start.sh ${KAFKA_HOME}/config/server.properties  > /dev/null 2>&1 &
 ```
 
->注意：
+>注意：  
 >1.在启动kafka前要先启动zookeeper集群。  
 >2.此命令需在各个kafka节点上执行  
 
