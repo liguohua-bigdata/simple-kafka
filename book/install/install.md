@@ -207,8 +207,7 @@ ${KAFKA_HOME}/bin/kafka-server-start.sh ${KAFKA_HOME}/config/server.properties  
 停止：${KAFKA_HOME}/bin/kafka-server-stop.sh 
 ```
 
-###7.其他说明    
-7.1日志说明  
+###7.日志说明  
 默认kafka的日志是保存在${KAFKA_HOME}/logs目录下的，这里说几个需要注意的日志  
 ```
 #kafka的运行日志
@@ -223,12 +222,12 @@ state-change.log
 controller.log 
 ```
 
-7.2查看kafka在zookeeper上是注册消息  
+###8.zookeeper注册信息说明
 进入zookeeper的客户端
 ```
 ${ZOOKEEPER_HOME}/bin/zkCli.sh
 ```
-在zookeeper客户端，查看根目录
+查看注册的znode：
 ```
  ls /
 ```
